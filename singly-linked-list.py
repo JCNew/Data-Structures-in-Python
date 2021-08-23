@@ -73,10 +73,16 @@ class SinglyLinkedList:
             node.next = current.next
             current.next = node
 
-
-ll = SinglyLinkedList([2, 5, 7])
-print(ll)
-n = Node(3)
-print(n)
-ll.insert_in_nth(4, 4)
-print(ll)
+    def remove_nth(self, index):
+        if not (0 <= index <= len(self)):
+            raise IndexError("List index out of range")
+        current = self.head
+        deleted_node = self.head
+        if index == 0:
+            self.head = self.head.next
+        else:
+            for i in range(index - 1):
+                current = current.next
+            deleted_node = current.next
+            current.next = current.next.next
+        return deleted_node.value

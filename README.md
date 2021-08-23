@@ -6,13 +6,13 @@ This GitHub repository serves as a showcase of the various data structures imple
 
 ---
 
-* Singly Linked List with iteration and insertion capabilties
+* Singly Linked List with iteration, insertion and deletion capabilties
 
+* Basic stack functionality
 ## TODO
 
 ---
 
-* Complete Singly Linked List
 * Implement:
   * Doubly Linked List
   * Stack
