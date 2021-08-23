@@ -8,7 +8,7 @@ class Node:
 # REGULAR LINKED LIST IMPLEMENTATION
 
 
-class LinkedList:
+class SinglyLinkedList:
     def __init__(self, nodes):
         self.head = None
         if nodes is not None:
@@ -27,21 +27,6 @@ class LinkedList:
             yield current.value
             current = current.next
 
-# CREATING A LINKED LIST
-
-
-linked_list1 = LinkedList([1, 3, 5, 7])
-
-# TESTING ITERATION
-
-for node in linked_list1:
-    print(node, end=" -> ")
-print(None)
-
-# INSERTING A NEW ELEMENT IMPLEMENTATION
-
-
-class InsertableLinkedList(LinkedList):
     def add_in_head(self, node):
         node.next = self.head
         self.head = node
@@ -54,13 +39,3 @@ class InsertableLinkedList(LinkedList):
         while current.next is not None:
             current = current.next
         current.next = node
-
-
-# TESTING INSERTING
-linked_list2 = InsertableLinkedList([1, 3, 5, 7])
-linked_list2.add_in_head(Node(2))
-linked_list2.add_end(Node(10))
-
-for node in linked_list2:
-    print(node, end=" -> ")
-print(None)
