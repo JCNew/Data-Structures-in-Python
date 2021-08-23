@@ -5,8 +5,11 @@ class Node:
         self.value = value
         self.next = None
 
-# REGULAR LINKED LIST IMPLEMENTATION
+    def __str__(self):
+        return f"Node with value {self.value}"
 
+
+# SINGLY LINKED LIST IMPLEMENTATION
 
 class SinglyLinkedList:
     def __init__(self, nodes):
@@ -27,11 +30,24 @@ class SinglyLinkedList:
             yield current.value
             current = current.next
 
-    def add_in_head(self, node):
+    def __str__(self):
+        return " -> ".join(str(node) for node in self)
+
+    def __len__(self):
+        return len(tuple(iter(self)))
+
+    def convert_to_node(self, value):
+        return Node(value)
+
+    def insert_in_head(self, node):
+        if not isinstance(node, Node):
+            node = self.convert_to_node(node)
         node.next = self.head
         self.head = node
 
-    def add_end(self, node):
+    def insert_in_tail(self, node):
+        if not isinstance(node, Node):
+            node = self.convert_to_node(node)
         if not self.head:
             self.head = node
             return
@@ -39,3 +55,28 @@ class SinglyLinkedList:
         while current.next is not None:
             current = current.next
         current.next = node
+
+    def insert_in_nth(self, index, node):
+        if not (0 <= index <= len(self)):
+            raise IndexError("List index out of range")
+        if not isinstance(node, Node):
+            node = self.convert_to_node(node)
+        current = self.head
+        if self.head is None:
+            self.head = node
+        elif index == 0:
+            node.next = self.head
+            self.head = node
+        else:
+            for i in range(index - 1):
+                current = current.next
+            node.next = current.next
+            current.next = node
+
+
+ll = SinglyLinkedList([2, 5, 7])
+print(ll)
+n = Node(3)
+print(n)
+ll.insert_in_nth(4, 4)
+print(ll)
