@@ -8,14 +8,13 @@ This GitHub repository serves as a showcase of the various data structures imple
 
 * Singly Linked List with iteration, insertion and deletion capabilties
 
-* Basic stack functionality
+* Full stack functionality
 ## TODO
 
 ---
 
 * Implement:
   * Doubly Linked List
-  * Stack
   * Queue
   * Other data structures
 
