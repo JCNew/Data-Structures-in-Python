@@ -86,3 +86,14 @@ class SinglyLinkedList:
             deleted_node = current.next
             current.next = current.next.next
         return deleted_node.value
+
+    def is_empty(self):
+        return not self.head
+
+    def search(self, value):
+        current = self.head
+        while current.next is not None:
+            if current.value == value:
+                return value
+            current = current.next
+        return False
