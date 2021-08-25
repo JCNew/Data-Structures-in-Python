@@ -1,6 +1,6 @@
 # Data Structures in Python
 
-This GitHub repository serves as a showcase of the various data structures implemented in Python.
+This GitHub repository serves as a showcase of the various data structures and algorithms implemented in Python.
 
 ## Completed
 
@@ -9,6 +9,8 @@ This GitHub repository serves as a showcase of the various data structures imple
 * Singly Linked List with iteration, insertion and deletion capabilties
 
 * Full stack functionality
+* Binary search
+
 ## TODO
 
 ---
